@@ -12,6 +12,12 @@ function taskFormHandler(event) {
     type: taskTypeInput,
   };
 
+  if (!taskNameInput || !taskTypeInput) {
+    alert("You need to fill out the task form!");
+    return false;
+  }
+
+  formEl.reset();
   // Send taskDataObj to createTaskEl
   createTaskEl(taskDataObj);
 }
